@@ -51,7 +51,7 @@ INSERT INTO "Catalog_ProductOption" ("Id", "Name") VALUES (1, 'Color');
 INSERT INTO "Catalog_ProductOption" ("Id", "Name") VALUES (2, 'Size');
 SELECT pg_catalog.setval('"Catalog_ProductOption_Id_seq"', 2, true);
 
-INSERT INTO "Core_Country" ("Id", "Name") VALUES (1, 'Việt Nam');
+INSERT INTO "Core_Country" ("Id", "Name", "IsBillingEnabled", "IsShippingEnabled") VALUES (1, 'Việt Nam', false, false);
 
 INSERT INTO "Core_StateOrProvince" ("Id", "CountryId", "Name", "Type") VALUES (79, 1, 'Hồ Chí Minh', 'Thành Phố');
 
@@ -1135,7 +1135,7 @@ INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Re
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Password', 'Parola');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Use a local account to log in.', 'Giriş yapmak için yerel bir hesap kullanın.');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Register as a new user?', 'Yeni bir kullanıcı olarak kaydolun mu?');
-INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Forgot your password?', 'Parolanızı mı unuttunuz?');;
+INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Forgot your password?', 'Parolanızı mı unuttunuz?');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Use another service to log in.', 'Giriş yapmak için başka bir servis kullanın.');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Full name', 'Ad Soyad');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Confirm password', 'Şifreyi Onayla');
@@ -1163,12 +1163,12 @@ INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Qu
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'There are no items in this cart.', 'Bu arabada hiç öğe yok.');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Go to shopping', 'Alışverişe gitmek');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Order summary', 'Sipariş özeti');
-INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Subtotal', 'Ara toplam');;
+INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Subtotal', 'Ara toplam');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Process to Checkout', 'Satın Alma İşlemi');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Shipping address', 'Teslimat adresi');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Add another address', 'Başka Bir Adres Ekle');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Contact name', 'İrtibat adı');
-INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Address', 'Adres');;
+INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Address', 'Adres');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'State or Province', 'Eyalet veya İl');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'District', 'İlçe');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Phone', 'Telefon');
@@ -1336,7 +1336,7 @@ INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Cr
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Your account', 'Hesabınız');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (8, 'Date', 'Tarih');
 
-INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Register', 'Registrar,');
+INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Register', 'Registrar,');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Hello {0}!', 'Hola!');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Log in', ' Iniciar sesión');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Log off', 'Salir');
@@ -1375,7 +1375,7 @@ INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Qu
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'There are no items in this cart.', 'No hay artículos en este carrito.');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Go to shopping', 'Ir de compras');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Order summary', 'Resumen de orden');
-INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Subtotal', 'Total parcial');;
+INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Subtotal', 'Total parcial');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Process to Checkout', 'Proceso para pagar');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Shipping address', 'Dirección de Envío');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Add another address', 'Añadir otra dirección');
@@ -1548,18 +1548,18 @@ INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Cr
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Your account', 'Tu cuenta');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (9, 'Date', 'Fecha');
 
-INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Register', '注册,');
+INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Register', '注册,');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Hello {0}!', '你好!');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Log in', '登录');
-INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Log off', '退出登录' )
+INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Log off', '退出登录' );
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'The Email field is required.', '邮箱必填');
-INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Email', '邮箱' )
+INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Email', '邮箱' );
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'User List', '用户清单');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Remember me?', '记住我?');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Password', '密码');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Use a local account to log in.', '使用本地帐户登录.');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Register as a new user?', '注册为新用户?');
-INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Forgot your password?', '忘记密码?');;
+INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Forgot your password?', '忘记密码?');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Use another service to log in.', '使用其他服务登录.');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Full name', '全名');
 INSERT INTO "Localization_Resource" ("CultureId", "Key", "Value") VALUES (10, 'Confirm password', '密码确定');
