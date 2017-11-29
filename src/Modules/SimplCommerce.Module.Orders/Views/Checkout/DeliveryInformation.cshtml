@@ -5,7 +5,7 @@
 }
 
 <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-8">
         <form asp-controller="Checkout" asp-action="DeliveryInformation" method="POST" id="checkout-delivery-address" class="form-horizontal">
             <h3>@Localizer["Shipping address"]</h3>
             @foreach(var address in Model.ExistingShippingAddresses)
@@ -84,12 +84,7 @@
             </div>
             <h3>@Localizer["Shipping methods"]</h3>
             <div id="shippingMethods">
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="shippingMethod" value="free">
-                        <strong>FREE</strong>
-                    </label>
-                </div>
+                <p>Please choose your shipping address</p>
             </div>
             <div class="form-group">
                 <div class="col-md-12 text-right">
@@ -98,12 +93,12 @@
             </div>
         </form>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-4">
         @await Component.InvokeAsync("OrderSummary")
     </div>
 </div>
 
 @section scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
-    <script simpl-append-version="true" src="~/modules/shipping/shipping.js"></script>
+    <script simpl-append-version="true" src="~/modules/orders/checkout.js"></script>
 }
